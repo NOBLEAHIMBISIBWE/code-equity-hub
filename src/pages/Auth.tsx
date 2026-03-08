@@ -49,15 +49,18 @@ const Auth = () => {
         className="w-full max-w-md"
       >
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 font-display font-bold text-2xl mb-2">
+          <Link to="/" className="inline-flex items-center gap-2 font-display font-bold text-2xl mb-2">
             <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
               <Zap className="w-6 h-6 text-primary-foreground" />
             </div>
             <span>Equi<span className="text-primary">Tech</span></span>
-          </div>
+          </Link>
           <p className="text-muted-foreground">
             {isSignUp ? "Create your account to get started" : "Welcome back! Sign in to continue"}
           </p>
+          <Link to="/" className="inline-flex items-center gap-1 text-sm text-primary hover:underline mt-2">
+            <ArrowLeft className="w-3 h-3" /> Back to Home
+          </Link>
         </div>
 
         <div className="bg-card border border-border rounded-2xl p-8 shadow-card">
