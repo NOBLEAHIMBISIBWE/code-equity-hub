@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { FileText, Code2, Palette, Mic, CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 const tools = [
   {
@@ -66,7 +67,7 @@ const CareerToolkit = () => {
                     </li>
                   ))}
                 </ul>
-                <Button variant="outline">
+                <Button variant="outline" onClick={() => toast.info("Coming soon! This feature is under development.")}>
                   Get Started <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </motion.div>
