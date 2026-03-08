@@ -44,13 +44,17 @@ const Community = () => {
     queryKey: ["post-comments", selectedPost],
     queryFn: async () => {
       if (!selectedPost) return [];
-      const { data, error } = await supabase
+      const { data: commentsData, error } = await supabase
         .from("post_comments")
-        .select("*, profiles!inner(full_name)")
+        .select("*")
         .eq("post_id", selectedPost)
         .order("created_at");
       if (error) throw error;
-      return data;
+      const userIds = [...new Set(commentsData.map(c => c.user_id))];
+      if (userIds.length === 0) return commentsData.map(c => ({ ...c, author_name: "Anonymous" }));
+      const { data: profilesData } = await supabase.from("profiles").select("user_id, full_name").in("user_id", userIds);
+      const profileMap = new Map((profilesData || []).map(p => [p.user_id, p.full_name]));
+      return commentsData.map(c => ({ ...c, author_name: profileMap.get(c.user_id) || "Anonymous" }));
     },
     enabled: !!selectedPost,
   });
