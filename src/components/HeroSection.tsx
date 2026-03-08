@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Users, BookOpen, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-illustration.png";
 
 const stats = [
@@ -10,6 +11,7 @@ const stats = [
 ];
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="relative pt-32 pb-20 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
@@ -34,10 +36,10 @@ const HeroSection = () => {
               and career pathways — ensuring no one is left behind because of gender.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="shadow-glow-teal">
+              <Button size="lg" className="shadow-glow-teal" onClick={() => navigate("/learning")}>
                 Start Learning <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="outline" onClick={() => navigate("/mentorship")}>
                 Find a Mentor
               </Button>
             </div>
