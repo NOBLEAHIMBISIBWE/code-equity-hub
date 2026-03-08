@@ -27,12 +27,16 @@ const Community = () => {
   const { data: posts = [], isLoading } = useQuery({
     queryKey: ["community-posts"],
     queryFn: async () => {
-      const { data, error } = await supabase
+      const { data: postsData, error } = await supabase
         .from("community_posts")
-        .select("*, profiles!inner(full_name)")
+        .select("*")
         .order("created_at", { ascending: false });
       if (error) throw error;
-      return data;
+      // Fetch profile names for post authors
+      const userIds = [...new Set(postsData.map(p => p.user_id))];
+      const { data: profilesData } = await supabase.from("profiles").select("user_id, full_name").in("user_id", userIds);
+      const profileMap = new Map((profilesData || []).map(p => [p.user_id, p.full_name]));
+      return postsData.map(p => ({ ...p, author_name: profileMap.get(p.user_id) || "Anonymous" }));
     },
   });
 
