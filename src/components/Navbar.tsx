@@ -13,6 +13,7 @@ const navItems = [
   { label: "Opportunities", path: "/opportunities" },
   { label: "Community", path: "/community" },
   { label: "Career Toolkit", path: "/toolkit" },
+  { label: "Report", path: "/report" },
 ];
 
 const Navbar = () => {
