@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Users, BookOpen, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-illustration.png";
 
 const stats = [
