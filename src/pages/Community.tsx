@@ -183,7 +183,7 @@ const Community = () => {
                 >
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-display font-bold text-primary text-sm flex-shrink-0">
-                      {(post.profiles?.full_name || "U").slice(0, 2).toUpperCase()}
+                      {(post.author_name || "U").slice(0, 2).toUpperCase()}
                     </div>
                     <div className="flex-1 min-w-0">
                       <h3 className="font-display font-semibold mb-1 hover:text-primary transition-colors">{post.title}</h3>
