@@ -42,7 +42,7 @@ const Community = () => {
       if (!selectedPost) return [];
       const { data, error } = await supabase
         .from("post_comments")
-        .select("*, profiles!post_comments_user_id_fkey(full_name)")
+        .select("*, profiles!inner(full_name)")
         .eq("post_id", selectedPost)
         .order("created_at");
       if (error) throw error;
