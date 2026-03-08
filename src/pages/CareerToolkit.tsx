@@ -66,7 +66,7 @@ const CareerToolkit = () => {
                     </li>
                   ))}
                 </ul>
-                <Button variant="outline">
+                <Button variant="outline" onClick={() => toast.info("Coming soon! This feature is under development.")}>
                   Get Started <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </motion.div>
