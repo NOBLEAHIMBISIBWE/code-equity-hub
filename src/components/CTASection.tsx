@@ -25,10 +25,10 @@ const CTASection = () => {
               a more inclusive tech industry — together.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" variant="secondary" className="shadow-glow-coral">
+              <Button size="lg" variant="secondary" className="shadow-glow-coral" onClick={() => navigate("/auth")}>
                 Join EquiTech Free <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
-              <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+              <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" onClick={() => navigate("/learning")}>
                 Learn More
               </Button>
             </div>

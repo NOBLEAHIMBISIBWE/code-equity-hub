@@ -36,10 +36,10 @@ const HeroSection = () => {
               and career pathways — ensuring no one is left behind because of gender.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="shadow-glow-teal">
+              <Button size="lg" className="shadow-glow-teal" onClick={() => navigate("/learning")}>
                 Start Learning <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="outline" onClick={() => navigate("/mentorship")}>
                 Find a Mentor
               </Button>
             </div>
