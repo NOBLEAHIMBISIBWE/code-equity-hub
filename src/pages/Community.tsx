@@ -189,7 +189,7 @@ const Community = () => {
                       <h3 className="font-display font-semibold mb-1 hover:text-primary transition-colors">{post.title}</h3>
                       <p className="text-sm text-muted-foreground line-clamp-2 mb-2">{post.content}</p>
                       <div className="flex items-center gap-3 text-xs text-muted-foreground mb-2">
-                        <span>{post.profiles?.full_name || "Anonymous"}</span>
+                        <span>{post.author_name || "Anonymous"}</span>
                         <span>•</span>
                         <span>{formatTime(post.created_at)}</span>
                       </div>
