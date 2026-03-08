@@ -13,6 +13,7 @@ import Dashboard from "./pages/Dashboard";
 import Opportunities from "./pages/Opportunities";
 import Community from "./pages/Community";
 import CareerToolkit from "./pages/CareerToolkit";
+import Report from "./pages/Report";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/opportunities" element={<ProtectedRoute><Opportunities /></ProtectedRoute>} />
             <Route path="/community" element={<ProtectedRoute><Community /></ProtectedRoute>} />
             <Route path="/toolkit" element={<ProtectedRoute><CareerToolkit /></ProtectedRoute>} />
+            <Route path="/report" element={<Report />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AuthProvider>
