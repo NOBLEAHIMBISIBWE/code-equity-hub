@@ -255,7 +255,7 @@ const Community = () => {
                 </DialogHeader>
                 <p className="text-sm text-muted-foreground mb-4">{post.content}</p>
                 <div className="text-xs text-muted-foreground mb-4">
-                  By {post.profiles?.full_name || "Anonymous"} • {formatTime(post.created_at)}
+                  By {post.author_name || "Anonymous"} • {formatTime(post.created_at)}
                 </div>
                 <div className="border-t border-border pt-4">
                   <h4 className="font-semibold mb-3">Comments</h4>
