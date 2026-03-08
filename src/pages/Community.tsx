@@ -29,7 +29,7 @@ const Community = () => {
     queryFn: async () => {
       const { data, error } = await supabase
         .from("community_posts")
-        .select("*, profiles!community_posts_user_id_fkey(full_name)")
+        .select("*, profiles!inner(full_name)")
         .order("created_at", { ascending: false });
       if (error) throw error;
       return data;
