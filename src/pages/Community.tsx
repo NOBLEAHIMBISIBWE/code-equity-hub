@@ -265,7 +265,7 @@ const Community = () => {
                     ) : (
                       comments.map((c: any) => (
                         <div key={c.id} className="p-3 rounded-lg bg-muted/50">
-                          <div className="text-xs text-muted-foreground mb-1">{c.profiles?.full_name || "Anonymous"} • {formatTime(c.created_at)}</div>
+                          <div className="text-xs text-muted-foreground mb-1">{c.author_name || "Anonymous"} • {formatTime(c.created_at)}</div>
                           <p className="text-sm">{c.content}</p>
                         </div>
                       ))
